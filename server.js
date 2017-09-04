@@ -20,7 +20,7 @@ var articles = {
     }
 };
 
-function createNew()
+function createNew(var dat)
 {
      var template = `<html>
     <head>
@@ -82,7 +82,7 @@ app.get('/:articleName',function(req,res){
 });
 
 app.get('/addString',function(req,res){
-    res.send(createNew());
+    res.send(createNew(5));
 });
 
 app.get('/ui/madi.png', function (req, res) {
