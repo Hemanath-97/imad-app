@@ -20,6 +20,29 @@ var articles = {
     }
 };
 
+function createNew()
+{
+     var template = `<html>
+    <head>
+     <title>
+      Welcome to add String page
+     </title>
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+     <div class="container">
+      <div>
+       <p> <input type="textbox"></input>
+      </div> 
+     </div>
+    </body>
+ </html>`;
+ 
+ return template;
+    
+}
+
 function createTemplate(data){
     var title = data.title;
     var content = data.content;
@@ -56,6 +79,10 @@ app.get('/ui/style.css', function (req, res) {
 app.get('/:articleName',function(req,res){
     var articleName = req.params.articleName;
     res.send(createTemplate(articles[articleName]));
+});
+
+app.get('/addString',function(req,res){
+    res.send(createNew());
 });
 
 app.get('/ui/madi.png', function (req, res) {
